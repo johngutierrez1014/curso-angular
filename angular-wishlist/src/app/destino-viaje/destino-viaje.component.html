@@ -2,13 +2,23 @@
     <div class="card-img">
         <img src="https://placeimg.com/360/280/nature" alt="">
         <span>
-            <h4>{{destino.nombre}}</h4>
+            <h4>{{position}}</h4>
         </span>
     </div>
     <div class="card-desc">
         <h3>{{destino.nombre}}</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In facilisis ornare nibh, sed ultricies ipsum.</p>
+        <p>Servicios</p>
+        <ul>
+            <li *ngFor="let s of destino.servicios">
+                <span [ngSwitch]="s">
+                    <i *ngSwitchCase="'desayuno'" style="color:red;">{{s}}</i>
+                    <i *ngSwitchDefault>{{s}}</i>
+                </span>
+            </li>
+        </ul>
         <a href="#" class="btn-card" (click)="ir()">Ir...!</a>
-        <span [style.display]="destino.isSelected() ? '' : 'none'">- PREFERIDO -</span>
+        <span *ngIf="destino.isSelected()">
+            <span ngNonBindable>{{PREFERIDO}}</span>
+        </span>
     </div>
 </div>
