@@ -8,6 +8,7 @@
     <div class="card-desc">
         <h3>{{destino.nombre}}</h3>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In facilisis ornare nibh, sed ultricies ipsum.</p>
-        <a href="#" class="btn-card">Read</a>
+        <a href="#" class="btn-card" (click)="ir()">Ir...!</a>
+        <span [style.display]="destino.isSelected() ? '' : 'none'">- PREFERIDO -</span>
     </div>
 </div>
