@@ -1,4 +1,5 @@
 export class DestinoViaje {
+    id: any;
   setselected(arg0: boolean) {
     throw new Error('Method not implemented.');
   }

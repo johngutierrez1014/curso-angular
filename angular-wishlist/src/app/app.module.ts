@@ -4,7 +4,7 @@ import { RouterModule, Routes } from '@angular/router';
 
 import { AppComponent } from './app.component';
 import { DestinoViajeComponent } from './destino-viaje/destino-viaje.component';
-import { ListaDestinoComponent } from './lista-destino/lista-destino.component';
+import { ListaDestinosComponent } from '././lista-destinos/lista-destinos.component';
 import { DestinoDetalleComponent } from './destino-detalle/destino-detalle.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FormDestinoViajeComponent } from './form-destino-viaje/form-destino-viaje.component';
@@ -12,7 +12,7 @@ import { FormDestinoViajeComponent } from './form-destino-viaje/form-destino-via
 /**Barra de navegacion */
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
-  { path: 'home', component: ListaDestinoComponent},
+  { path: 'home', component: ListaDestinosComponent},
   { path: 'destino', component: DestinoDetalleComponent}
 ];
 
@@ -20,7 +20,7 @@ const routes: Routes = [
   declarations: [
     AppComponent,
     DestinoViajeComponent,
-    ListaDestinoComponent,
+    ListaDestinosComponent,
     DestinoDetalleComponent,
     FormDestinoViajeComponent
   ],
