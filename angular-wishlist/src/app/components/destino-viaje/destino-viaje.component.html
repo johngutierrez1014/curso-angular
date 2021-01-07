@@ -1,0 +1,34 @@
+<div class="card-content" [@esFavorito]="destino.isSelected() ? 'estadoFavorito' : 'estadoNoFavorito'">
+    <div class="card-img">
+        <img src="https://placeimg.com/380/230/nature" alt="">
+        <span><h4>{{position}}</h4></span>
+    </div>
+    <div class="card-desc">
+        <h3>{{destino.nombre}}</h3>
+        <p>Servicios</p>
+        <div>
+            <a href="#" (click)="voteUp()" appTrackearClick data-trackear-tags="destino_vote_up lista_destinos_item">
+                <i class="material-icons md-18">thumb_up</i>
+            </a>
+            &nbsp;
+            <a href="#" (click)="voteDown()" appTrackearClick data-trackear-tags="destino_vote_down lista_destinos_item">
+                <i class="material-icons md-18">thumb_down</i>
+            </a>
+            &nbsp;
+            Votos: {{destino.votes}}
+        </div>
+        <ul>
+            <li *ngFor="let s of destino.servicios;">
+                <span class="container" [ngSwitch]="s">
+                    <i *ngSwitchCase="'desayuno'" style="color: red;">{{s}} *</i>
+                    <i *ngSwitchDefault>{{ s }}</i>
+                </span>
+            </li>
+        </ul>
+        <a href="#" class="btn-card" (click)="ir()" appTrackearClick data-trackear-tags="destino_elegir_preferido lista_destinos_item">IR!</a>
+        <span *ngIf="destino.isSelected()">
+            <span ngNonBindable>{{ PREFERIDO! }}</span>
+        </span>
+        <a [routerLink]="['/destino', destino.id]">Ver!</a>
+    </div>
+</div>
